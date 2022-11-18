@@ -12,7 +12,7 @@ export default function Task() {
     const [tooltipVisible, setTooltipVisible] = useState(false)
 
     return (
-        <div className='w-full'>
+        <div className='w-full h-full xxl:h-[1555px] xxl:pb-[169px]'>
             <div className='w-full h-full md:max-w-[700px] lg:max-w-[800px] xl:max-w-[980px] xxl:max-w-[1535px] mx-auto p-5 '>
                 <img src={logo} alt="logo"
                     className='mt-5 md:mt-0 mb-5 md:mb-0 md:max-w-[500px] xxl:mt-20 xxl:mb-[70px] xxl:max-w-[833px] xxl:max-h-[240px] mx-auto' />
@@ -31,7 +31,7 @@ export default function Task() {
                                 onChange={(e) => { setUserValue(e.target.value) }}
                                 onFocus={() => { setTooltipVisible(false) }}
                                 placeholder='Enter a number!'
-                                className='p-3 sm:p-4 border border-gray-200 rounded-[4px] w-full sm:w-[340px] sm:mr-8 mb-4'
+                                className='p-3 sm:p-4 border border-gray-200 rounded-[4px] w-full sm:w-[340px] sm:mr-8 mb-4 sm:mb-0'
                             />
                             {/* <p className='text-[10px] mb-3 sm:mb-0 text-zinc-600'><span className='text-red-600'>*</span> Max value can be 30</p> */}
 
@@ -131,7 +131,7 @@ export default function Task() {
 
                     {/* Grid container with fixed width and adjustable height */}
                     <div
-                        className='bg-orange-100 border border-orange-600 min-h-[250px] md:min-h-[350px] xxl:min-h-[744px] xl:w-[1080] xxl:w-[1535px] rounded-3xl p-6 xxl:p-12 mx-auto'>
+                        className='bg-orange-100 border border-orange-600 min-h-[250px] md:min-h-[350px] xxl:h-[744px] xl:w-[1080] xxl:max-w-[1535px] rounded-3xl p-6 xxl:p-12 mx-auto'>
                         <div
                             className='flex flex-wrap gap-x-2 xxl:gap-x-8 gap-y-2 xxl:gap-y-4 mx-auto w-full'>
                             {gridArr?.map((item, idx) => {
