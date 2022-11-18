@@ -59,8 +59,8 @@ export default function Task() {
                                 }}
                                 className='bg-blue-600 border border-transparent text-white w-full rounded
                                 py-[14px] px-8 text-sm leading-[14px] 
+                                sm:px-8 sm:py-4 sm:w-auto sm:rounded-[4px]
                                 '
-                                // sm:px-8 sm:py-4 sm:w-auto sm:rounded-[4px]
                                 // py-1 rounded-2xl ml-2 max-w-[130px]
                                 // xs375:max-w-[150px] xs375:py-1.5 
                                 // xs425:max-w-[180px] xs425:py-2
