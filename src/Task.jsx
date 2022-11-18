@@ -13,7 +13,7 @@ export default function Task() {
 
     return (
         <div className='w-full'>
-            <div className='w-full h-full md:max-w-[700px] lg:max-w-[800px] xl:max-w-[1080px] xxl:max-w-[1535px] mx-auto p-5 '>
+            <div className='w-full h-full md:max-w-[700px] lg:max-w-[800px] xl:max-w-[980px] xxl:max-w-[1535px] mx-auto p-5 '>
                 <img src={logo} alt="logo" className='mt-5 md:mt-0 mb-5 md:mb-0 md:max-w-[500px] xxl:mt-20 xxl:mb-[70px] xxl:max-w-[833px] xxl:max-h-[240px] mx-auto' />
                 <div className=''>
                     <p className='xxl:text-2xl leading-6 font-medium mb-5 xxl:mb-14'>Task: Num detector via color in grid</p>
