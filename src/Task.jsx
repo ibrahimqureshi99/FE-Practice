@@ -13,8 +13,8 @@ export default function Task() {
 
     return (
         <div className='w-full'>
-            <div className='w-full h-full xl:max-w-[1330px] xxl:max-w-[1535px] mx-auto p-5 xxl:p-0'>
-                <img src={logo} alt="logo" className='mt-5 mb-5 md:max-w-[500px] md:mb-0 md:mt-0 xxl:mt-20 xxl:mb-[70px] xxl:max-w-[833px] xxl:max-h-[240px] mx-auto' />
+            <div className='w-full h-full md:max-w-[700px] lg:max-w-[800px] xl:max-w-[1080px] xxl:max-w-[1535px] mx-auto p-5 '>
+                <img src={logo} alt="logo" className='mt-5 md:mt-0 mb-5 md:mb-0 md:max-w-[500px] xxl:mt-20 xxl:mb-[70px] xxl:max-w-[833px] xxl:max-h-[240px] mx-auto' />
                 <div className=''>
                     <p className='xxl:text-2xl leading-6 font-medium mb-5 xxl:mb-14'>Task: Num detector via color in grid</p>
                     <p className='mb-3'>Enter number</p>
@@ -30,7 +30,7 @@ export default function Task() {
                                 onChange={(e) => { setUserValue(e.target.value) }}
                                 onFocus={() => { setTooltipVisible(false) }}
                                 placeholder='Enter a numeric value up to 30!'
-                                className='p-4 border border-gray-200 rounded-[4px] w-full sm:w-[360px] sm:mr-8 mb-2 sm:mb-0'
+                                className='p-3 sm:p-4 border border-gray-200 rounded-[4px] w-full sm:w-[360px] sm:mr-8 mb-2 sm:mb-0'
                             />
 
                             {/* Custom Tooltip */}
@@ -54,7 +54,9 @@ export default function Task() {
                                         setResetButtonVisible(true);
                                     }
                                 }}
-                                className='bg-blue-600 border border-transparent text-white px-8 py-4 rounded-[4px] w-full sm:w-auto'
+                                className='bg-blue-600 border border-transparent text-white 
+                                sm:px-8 sm:py-4 sm:w-auto sm:rounded-[4px]
+                                px-10 py-1 rounded-2xl ml-2 max-w-[130px]'
                             >
                                 Submit
                             </button>
@@ -67,7 +69,7 @@ export default function Task() {
                                     setResetButtonVisible(false)
                                 }
                                 }
-                                className='sm:hidden text-blue-600 border border-blue-600 rounded-[4px] px-8 py-4 w-full sm:w-auto'>
+                                className='sm:hidden text-blue-600 border border-blue-600 px-12 py-1 rounded-2xl mr-2 absolute right-0 self-end max-w-[130px]'>
                                 Reset</button>}
                         </div>
 
@@ -86,22 +88,22 @@ export default function Task() {
 
                     {/* Number classification labels */}
                     <div className='mb-6'>
-                        <ul className='flex flex-col xs:flex-row gap-4'>
+                        <ul className='flex flex-row gap-3 xs:gap-4'>
                             <li>
-                                <p className='text-neutral-600 text-xs leading-3'><span className='bg-amber-400 text-amber-400 rounded-full text-xs px-2 mr-2'></span>Prime Number</p>
+                                <p className='text-neutral-600 text-[11px] xs:text-xs leading-3'><span className='bg-amber-400 text-amber-400 rounded-full text-[10px] px-[7px] mr-1 xs:text-xs xs:px-2 xs:mr-2'></span>Prime Number</p>
                             </li>
                             <li>
-                                <p className='text-neutral-600 text-xs leading-3'><span className='bg-emerald-400 text-emerald-400 rounded-full text-xs px-2 mr-2'></span>Even Number</p>
+                                <p className='text-neutral-600 text-[11px] xs:text-xs leading-3'><span className='bg-emerald-400 text-emerald-400 rounded-full text-[10px] px-[7px] mr-1 xs:text-xs xs:px-2 xs:mr-2'></span>Even Number</p>
                             </li>
                             <li>
-                                <p className='text-neutral-600 text-xs leading-3'><span className='bg-blue-400 text-blue-400 rounded-full text-xs px-2 mr-2'></span>Odd Number</p>
+                                <p className='text-neutral-600 text-[11px] xs:text-xs leading-3'><span className='bg-blue-400 text-blue-400 rounded-full text-[10px] px-[7px] mr-1 xs:text-xs xs:px-2 xs:mr-2'></span>Odd Number</p>
                             </li>
                         </ul>
                     </div>
 
                     {/* Grid container with fixed width and adjustable height */}
                     <div
-                        className='bg-orange-100 border border-orange-600 min-h-[250px] md:min-h-[500px] xxl:min-h-[744px] xxl:w-[1535px] rounded-3xl p-6 xxl:p-12 mx-auto justify-center'>
+                        className='bg-orange-100 border border-orange-600 min-h-[250px] md:min-h-[350px] xxl:min-h-[744px] xl:w-[1080] xxl:w-[1535px] rounded-3xl p-6 xxl:p-12 mx-auto justify-center'>
                         <div
                             className='flex flex-wrap gap-x-2 xxl:gap-x-8 gap-y-2 xxl:gap-y-4'>
                             {gridArr?.map((item, idx) => {
