@@ -13,14 +13,14 @@ export default function Task() {
 
     return (
         <div className='w-full h-full xxl:h-[1555px] xxl:pb-[169px]'>
-            <div className='w-full h-full md:max-w-[700px] lg:max-w-[800px] xl:max-w-[980px] xxl:max-w-[1535px] mx-auto p-5 '>
+            <div className='w-full h-full md:max-w-[700px] lg:max-w-[800px] xl:max-w-[980px] xxl:max-w-[1535px] mx-auto p-4'>
                 <img src={logo} alt="logo"
                     className='mt-5 md:mt-0 mb-5 md:mb-0 md:max-w-[500px] xxl:mt-20 xxl:mb-[70px] xxl:max-w-[833px] xxl:max-h-[240px] mx-auto' />
                 <div className=''>
                     <p className='xxl:text-2xl leading-6 font-bold mb-5 xxl:mb-14'>Task: Num detector via color in grid</p>
                     <p className='mb-3'>Enter number</p>
                     <div className='xs320:flex justify-between'>
-                        <div className='mb-5 xxl:mb-14 relative w-full sm:w-auto'>
+                        <div className='mb-8 xxl:mb-14 relative w-full sm:w-auto'>
 
                             {/* Input field that takes user input */}
                             <input
@@ -57,12 +57,13 @@ export default function Task() {
                                         setResetButtonVisible(true);
                                     }
                                 }}
-                                className='bg-blue-600 border border-transparent text-white w-full
-                                sm:px-8 sm:py-4 sm:w-auto sm:rounded-[4px]
-                                py-1 rounded-2xl ml-2 max-w-[130px]
-                                xs375:max-w-[150px] xs375:py-1.5 
-                                xs425:max-w-[180px] xs425:py-2
+                                className='bg-blue-600 border border-transparent text-white w-full rounded
+                                py-[14px] px-8 text-sm leading-[14px] 
                                 '
+                                // sm:px-8 sm:py-4 sm:w-auto sm:rounded-[4px]
+                                // py-1 rounded-2xl ml-2 max-w-[130px]
+                                // xs375:max-w-[150px] xs375:py-1.5 
+                                // xs425:max-w-[180px] xs425:py-2
                             >
                                 Submit
                             </button>
@@ -75,7 +76,8 @@ export default function Task() {
                                     setResetButtonVisible(false)
                                 }
                                 }
-                                className='sm:hidden text-blue-600 border border-blue-600 px-12 py-1 rounded-2xl mr-2 absolute right-0 self-end w-full max-w-[130px] xs375:max-w-[150px] xs375:py-1.5  xs425:max-w-[180px] xs425:py-2'>
+                                // className='sm:hidden text-blue-600 border border-blue-600 px-12 py-1 rounded-2xl mr-2 absolute right-0 self-end w-full max-w-[130px] xs375:max-w-[150px] xs375:py-1.5  xs425:max-w-[180px] xs425:py-2'>
+                                className='sm:hidden text-blue-600 border border-blue-600 py-[14px] px-8 text-sm leading-[14px] rounded w-full mt-2'>
                                 Reset</button>}
                         </div>
 
