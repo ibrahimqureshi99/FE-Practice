@@ -9,7 +9,11 @@ module.exports = {
       xl: "1280px",
       xxl: "1536px",
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        KohSantepheap: ["Koh Santepheap", "cursive"]
+      },
+    },
   },
   plugins: [],
 };

@@ -14,7 +14,8 @@ export default function Task() {
     return (
         <div className='w-full'>
             <div className='w-full h-full md:max-w-[700px] lg:max-w-[800px] xl:max-w-[980px] xxl:max-w-[1535px] mx-auto p-5 '>
-                <img src={logo} alt="logo" className='mt-5 md:mt-0 mb-5 md:mb-0 md:max-w-[500px] xxl:mt-20 xxl:mb-[70px] xxl:max-w-[833px] xxl:max-h-[240px] mx-auto' />
+                <img src={logo} alt="logo"
+                    className='mt-5 md:mt-0 mb-5 md:mb-0 md:max-w-[500px] xxl:mt-20 xxl:mb-[70px] xxl:max-w-[833px] xxl:max-h-[240px] mx-auto' />
                 <div className=''>
                     <p className='xxl:text-2xl leading-6 font-medium mb-5 xxl:mb-14'>Task: Num detector via color in grid</p>
                     <p className='mb-3'>Enter number</p>
@@ -32,10 +33,11 @@ export default function Task() {
                                 placeholder='Enter a number!'
                                 className='p-3 sm:p-4 border border-gray-200 rounded-[4px] w-full sm:w-[360px] sm:mr-8'
                             />
-                            <p className='text-[10px] mb-3 sm:mb-0 text-zinc-600'><span className='text-red-600'>*</span> Max value can be 30</p>
+                            {/* <p className='text-[10px] mb-3 sm:mb-0 text-zinc-600'><span className='text-red-600'>*</span> Max value can be 30</p> */}
 
                             {/* Custom Tooltip */}
-                            <div className={`absolute -top-14 sm:top-10 sm:-bottom-6 left-20 sm:left-4 bg-red-100 text-red-500 border border-t-red-500 border-l-red-500 border-b-purple-500 border-r-purple-500  px-4 py-2 rounded-t-lg xs:rounded-t-0 xs:rounded-tr-lg xs:rounded-b-lg rounded-br-lg  shadow-md ${(tooltipVisible && `opacity-100`) || `opacity-0`} transition-opacity duration-300 `}>
+                            <div
+                                className={`absolute -top-14 sm:top-10 sm:-bottom-6 left-20 sm:left-4 bg-red-100 text-red-500 border border-t-red-500 border-l-red-500 border-b-purple-500 border-r-purple-500  px-4 py-2 rounded-t-lg xs:rounded-t-0 xs:rounded-tr-lg xs:rounded-b-lg rounded-br-lg  shadow-md ${(tooltipVisible && `opacity-100`) || `opacity-0`} transition-opacity duration-300 `}>
                                 <p>Please enter a value between 1 and 30!</p></div>
 
                             {/* Submit Button*/}
@@ -91,27 +93,43 @@ export default function Task() {
                     <div className='mb-6'>
                         <ul className='flex flex-row gap-3 xs:gap-4'>
                             <li>
-                                <p className='text-neutral-600 text-[11px] xs:text-xs leading-3'><span className='bg-amber-400 text-amber-400 rounded-full text-[10px] px-[7px] mr-1 xs:text-xs xs:px-2 xs:mr-2'></span>Prime Number</p>
+                                <p className='text-neutral-600 text-[11px] xs:text-xs leading-3'>
+                                    <span
+                                        className='bg-amber-400 text-amber-400 rounded-full text-[10px] px-[7px] mr-1 xs:text-xs xs:px-2 xs:mr-2'>
+                                    </span>
+                                    Prime Number
+                                </p>
                             </li>
                             <li>
-                                <p className='text-neutral-600 text-[11px] xs:text-xs leading-3'><span className='bg-emerald-400 text-emerald-400 rounded-full text-[10px] px-[7px] mr-1 xs:text-xs xs:px-2 xs:mr-2'></span>Even Number</p>
+                                <p className='text-neutral-600 text-[11px] xs:text-xs leading-3'>
+                                    <span
+                                        className='bg-emerald-400 text-emerald-400 rounded-full text-[10px] px-[7px] mr-1 xs:text-xs xs:px-2 xs:mr-2'>
+                                    </span>
+                                    Even Number
+                                </p>
                             </li>
                             <li>
-                                <p className='text-neutral-600 text-[11px] xs:text-xs leading-3'><span className='bg-blue-400 text-blue-400 rounded-full text-[10px] px-[7px] mr-1 xs:text-xs xs:px-2 xs:mr-2'></span>Odd Number</p>
+                                <p
+                                    className='text-neutral-600 text-[11px] xs:text-xs leading-3'>
+                                    <span
+                                        className='bg-blue-400 text-blue-400 rounded-full text-[10px] px-[7px] mr-1 xs:text-xs xs:px-2 xs:mr-2'>
+                                    </span>
+                                    Odd Number
+                                </p>
                             </li>
                         </ul>
                     </div>
 
                     {/* Grid container with fixed width and adjustable height */}
                     <div
-                        className='bg-orange-100 border border-orange-600 min-h-[250px] md:min-h-[350px] xxl:min-h-[744px] xl:w-[1080] xxl:w-[1535px] rounded-3xl p-6 xxl:p-12 mx-auto justify-center'>
+                        className='bg-orange-100 border border-orange-600 min-h-[250px] md:min-h-[350px] xxl:min-h-[744px] xl:w-[1080] xxl:w-[1535px] rounded-3xl p-6 xxl:p-12 mx-auto'>
                         <div
-                            className='flex flex-wrap gap-x-2 xxl:gap-x-8 gap-y-2 xxl:gap-y-4'>
+                            className='flex flex-wrap gap-x-2 xxl:gap-x-8 gap-y-2 xxl:gap-y-4 mx-auto w-full'>
                             {gridArr?.map((item, idx) => {
                                 return (
                                     <div
                                         key={idx * 1000 * Math.random()}
-                                        className={`flex items-center justify-center min-w-[50px] min-h-[50px]  text-white text-lg xxl:text-[32px] leading-8 text-center rounded-2xl 
+                                        className={`flex items-center justify-center min-w-[50px] min-h-[50px] sm:w-[213px] sm:h-[150px] text-white text-lg xxl:text-[32px] leading-8 text-center rounded-2xl 
                                         ${(item > 2 && item % 2 !== 0 && item % 3 !== 0 && item % 5 !== 0 && item % 7 !== 0 && 'bg-yellow-500') ||
                                             (((item === 2) || (item === 3) || (item === 5)) && 'bg-yellow-500') ||
                                             (item % 2 === 0 && 'bg-green-500') ||
