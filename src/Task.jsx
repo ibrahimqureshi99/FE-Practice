@@ -29,12 +29,13 @@ export default function Task() {
                                 max='30'
                                 onChange={(e) => { setUserValue(e.target.value) }}
                                 onFocus={() => { setTooltipVisible(false) }}
-                                placeholder='Enter a numeric value up to 30!'
-                                className='p-3 sm:p-4 border border-gray-200 rounded-[4px] w-full sm:w-[360px] sm:mr-8 mb-2 sm:mb-0'
+                                placeholder='Enter a number!'
+                                className='p-3 sm:p-4 border border-gray-200 rounded-[4px] w-full sm:w-[360px] sm:mr-8'
                             />
+                            <p className='text-[10px] mb-3 sm:mb-0 text-zinc-600'><span className='text-red-600'>*</span> Max value can be 30</p>
 
                             {/* Custom Tooltip */}
-                            <div className={`absolute -top-10 sm:top-10 sm:-bottom-6 left-20 sm:left-4 bg-red-100 text-red-500 border border-t-red-500 border-l-red-500 border-b-purple-500 border-r-purple-500  px-4 py-2 rounded-t-lg xs:rounded-t-0 xs:rounded-tr-lg xs:rounded-b-lg rounded-br-lg  shadow-md ${(tooltipVisible && `opacity-100`) || `opacity-0`} transition-opacity duration-300 `}>
+                            <div className={`absolute -top-14 sm:top-10 sm:-bottom-6 left-20 sm:left-4 bg-red-100 text-red-500 border border-t-red-500 border-l-red-500 border-b-purple-500 border-r-purple-500  px-4 py-2 rounded-t-lg xs:rounded-t-0 xs:rounded-tr-lg xs:rounded-b-lg rounded-br-lg  shadow-md ${(tooltipVisible && `opacity-100`) || `opacity-0`} transition-opacity duration-300 `}>
                                 <p>Please enter a value between 1 and 30!</p></div>
 
                             {/* Submit Button*/}
@@ -111,7 +112,7 @@ export default function Task() {
                                     <div
                                         key={idx * 1000 * Math.random()}
                                         className={`flex items-center justify-center min-w-[50px] min-h-[50px]  text-white text-lg xxl:text-[32px] leading-8 text-center rounded-2xl 
-                                        ${(item > 2 && item % 2 !== 0 && item % 3 !== 0 && 'bg-yellow-500') ||
+                                        ${(item > 2 && item % 2 !== 0 && item % 3 !== 0 && item % 5 !== 0 && item % 7 !== 0 && 'bg-yellow-500') ||
                                             (((item === 2) || (item === 3) || (item === 5)) && 'bg-yellow-500') ||
                                             (item % 2 === 0 && 'bg-green-500') ||
                                             ('bg-blue-500')
