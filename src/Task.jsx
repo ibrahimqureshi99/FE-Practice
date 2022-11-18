@@ -19,7 +19,7 @@ export default function Task() {
                 <div className=''>
                     <p className='xxl:text-2xl leading-6 font-bold mb-5 xxl:mb-14'>Task: Num detector via color in grid</p>
                     <p className='mb-3'>Enter number</p>
-                    <div className='xs:flex justify-between'>
+                    <div className='xs320:flex justify-between'>
                         <div className='mb-5 xxl:mb-14 relative w-full sm:w-auto'>
 
                             {/* Input field that takes user input */}
@@ -31,13 +31,13 @@ export default function Task() {
                                 onChange={(e) => { setUserValue(e.target.value) }}
                                 onFocus={() => { setTooltipVisible(false) }}
                                 placeholder='Enter a number!'
-                                className='p-3 sm:p-4 border border-gray-200 rounded-[4px] w-full sm:w-[360px] sm:mr-8'
+                                className='p-3 sm:p-4 border border-gray-200 rounded-[4px] w-full sm:w-[340px] sm:mr-8 mb-4'
                             />
                             {/* <p className='text-[10px] mb-3 sm:mb-0 text-zinc-600'><span className='text-red-600'>*</span> Max value can be 30</p> */}
 
                             {/* Custom Tooltip */}
                             <div
-                                className={`absolute -top-14 sm:top-10 sm:-bottom-6 left-20 sm:left-4 bg-red-100 text-red-500 border border-t-red-500 border-l-red-500 border-b-purple-500 border-r-purple-500  px-4 py-2 rounded-t-lg xs:rounded-t-0 xs:rounded-tr-lg xs:rounded-b-lg rounded-br-lg  shadow-md ${(tooltipVisible && `opacity-100`) || `opacity-0`} transition-opacity duration-300 `}>
+                                className={`absolute -top-14 sm:top-10 sm:-bottom-6 left-20 sm:left-4 bg-red-100 text-red-500 border border-t-red-500 border-l-red-500 border-b-purple-500 border-r-purple-500  px-4 py-2 rounded-t-lg xs320:rounded-t-0 xs320:rounded-tr-lg xs320:rounded-b-lg rounded-br-lg  shadow-md ${(tooltipVisible && `opacity-100`) || `opacity-0`} transition-opacity duration-300 `}>
                                 <p>Please enter a value between 1 and 30!</p></div>
 
                             {/* Submit Button*/}
@@ -57,9 +57,12 @@ export default function Task() {
                                         setResetButtonVisible(true);
                                     }
                                 }}
-                                className='bg-blue-600 border border-transparent text-white 
+                                className='bg-blue-600 border border-transparent text-white w-full
                                 sm:px-8 sm:py-4 sm:w-auto sm:rounded-[4px]
-                                px-10 py-1 rounded-2xl ml-2 max-w-[130px]'
+                                py-1 rounded-2xl ml-2 max-w-[130px]
+                                xs375:max-w-[150px] xs375:py-1.5 
+                                xs425:max-w-[180px] xs425:py-2
+                                '
                             >
                                 Submit
                             </button>
@@ -72,7 +75,7 @@ export default function Task() {
                                     setResetButtonVisible(false)
                                 }
                                 }
-                                className='sm:hidden text-blue-600 border border-blue-600 px-12 py-1 rounded-2xl mr-2 absolute right-0 self-end max-w-[130px]'>
+                                className='sm:hidden text-blue-600 border border-blue-600 px-12 py-1 rounded-2xl mr-2 absolute right-0 self-end w-full max-w-[130px] xs375:max-w-[150px] xs375:py-1.5  xs425:max-w-[180px] xs425:py-2'>
                                 Reset</button>}
                         </div>
 
@@ -91,29 +94,35 @@ export default function Task() {
 
                     {/* Number classification labels */}
                     <div className='mb-6'>
-                        <ul className='flex flex-row gap-3 xs:gap-4'>
+                        <ul className='flex flex-row gap-3 xs320:gap-4'>
                             <li>
-                                <p className='text-neutral-600 text-[11px] xs:text-xs leading-3'>
+                                <p className='text-neutral-600 text-[10px] xs375:text-[12px] xs425:text-[14px] sm:text-xs leading-3'>
+                                    {/* Label icon */}
                                     <span
-                                        className='bg-amber-400 text-amber-400 rounded-full text-[10px] px-[7px] mr-1 xs:text-xs xs:px-2 xs:mr-2'>
+                                        className='bg-amber-400 text-amber-400 rounded-full text-[8px] px-[5px] mr-1 xs375:text-[11px] xs375:px-[7px] xs425:text-[14px] xs425:px-[9px] xs375:mr-1.5 sm:text-xs sm:px-2 sm:mr-2'>
                                     </span>
+                                    {/* Label text */}
                                     Prime Number
                                 </p>
                             </li>
                             <li>
-                                <p className='text-neutral-600 text-[11px] xs:text-xs leading-3'>
+                                <p className='text-neutral-600 text-[10px] xs375:text-[12px] xs425:text-[14px] sm:text-xs leading-3'>
+                                    {/* Label icon */}
                                     <span
-                                        className='bg-emerald-400 text-emerald-400 rounded-full text-[10px] px-[7px] mr-1 xs:text-xs xs:px-2 xs:mr-2'>
+                                        className='bg-emerald-400 text-emerald-400 rounded-full text-[8px] px-[5px] mr-1 xs375:text-[11px] xs375:px-[7px] xs425:text-[14px] xs425:px-[9px] xs375:mr-1.5 sm:text-xs sm:px-2 sm:mr-2'>
                                     </span>
+                                    {/* Label text */}
                                     Even Number
                                 </p>
                             </li>
                             <li>
                                 <p
-                                    className='text-neutral-600 text-[11px] xs:text-xs leading-3'>
+                                    className='text-neutral-600 text-[10px] xs375:text-[12px] xs425:text-[14px] sm:text-xs leading-3'>
+                                    {/* Label icon */}
                                     <span
-                                        className='bg-blue-400 text-blue-400 rounded-full text-[10px] px-[7px] mr-1 xs:text-xs xs:px-2 xs:mr-2'>
+                                        className='bg-blue-400 text-blue-400 rounded-full text-[8px] px-[5px] mr-1 xs375:text-[11px] xs375:px-[7px] xs425:text-[14px] xs425:px-[9px] xs375:mr-1.5 sm:text-xs sm:px-2 sm:mr-2'>
                                     </span>
+                                    {/* Label text */}
                                     Odd Number
                                 </p>
                             </li>
@@ -129,7 +138,7 @@ export default function Task() {
                                 return (
                                     <div
                                         key={idx * 1000 * Math.random()}
-                                        className={`flex items-center justify-center min-w-[50px] min-h-[50px] sm:w-[213px] sm:h-[150px] text-white text-lg xxl:text-[32px] leading-8 text-center rounded-2xl 
+                                        className={`flex items-center justify-center min-w-[50px] min-h-[50px] xs320:w-[70px] xs320:h-[70px] xs375:w-[89px] xs375:h-[87px] xs425:w-[75px] xs425:h-[75px] sm:w-[125px] sm:h-[125px] md:w-[145px] md:h-[150px] lg:w-[171px] lg:h-[150px] xxl:w-[212px] xxl:h-[150px] text-white text-lg xxl:text-[32px] leading-8 text-center rounded-2xl 
                                         ${(item > 2 && item % 2 !== 0 && item % 3 !== 0 && item % 5 !== 0 && item % 7 !== 0 && 'bg-yellow-500') ||
                                             (((item === 2) || (item === 3) || (item === 5)) && 'bg-yellow-500') ||
                                             (item % 2 === 0 && 'bg-green-500') ||
