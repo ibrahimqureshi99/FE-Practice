@@ -72,9 +72,7 @@ export default function Task() {
                                 onClick={() => {
                                     setGridArr();
                                     setUserValue("");
-                                    setResetButt
-                                    
-                                    onVisible(false)
+                                    setResetButtonVisible(false)
                                 }
                                 }
                                 className='sm:hidden text-blue-600 border border-blue-600 px-12 py-1 rounded-2xl mr-2 absolute right-0 self-end w-full max-w-[130px] xs375:max-w-[150px] xs375:py-1.5  xs425:max-w-[180px] xs425:py-2'>
