@@ -38,7 +38,7 @@ export default function Task() {
     // Comparison with sorted array
     let sorted = sortGridArr(gridArr);
     if (JSON.stringify(copyListItems) === JSON.stringify(sorted)) {
-      setTimeout(alert("Welcome to the team!"), 20000);
+      setTimeout(alert("Task completed successfully!"), 20000);
     }
 
     function sortGridArr(arr) {
