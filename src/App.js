@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <Router>
-      <div className="font-KohSantepheap">
+      <div className="font-Inter">
         <Routes>
           <Route>
             <Route path="/" element={<Main />} />

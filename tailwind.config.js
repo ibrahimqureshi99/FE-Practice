@@ -13,6 +13,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
+        Inter: ["Inter", "cursive"],
         KohSantepheap: ["Koh Santepheap", "cursive"]
       },
     },

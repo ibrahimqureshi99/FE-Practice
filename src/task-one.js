@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "./images/AP-logo.png";
 
 export default function TaskOne() {
@@ -9,25 +10,25 @@ export default function TaskOne() {
   const [gridArr, setGridArr] = useState();
   const [resetButtonVisible, setResetButtonVisible] = useState(false);
   const [tooltipVisible, setTooltipVisible] = useState(false);
-//   const [checkPrime, setCheckPrime] = useState(false);
+  //   const [checkPrime, setCheckPrime] = useState(false);
 
-//   function checkIfPrime(val) {
-//     for (let j = 2; j <= Math.sqrt(val); j++) {
-//       if (val % j === 0) {
-//         setCheckPrime(false);
-//         console.log("first");
-//         break;
-//       } else {
-//         setCheckPrime(true);
-//         // console.log("first");
-//       }
-//     }
-//     return checkPrime;
-//     // console.log(checkPrime)
-//   }
+  //   function checkIfPrime(val) {
+  //     for (let j = 2; j <= Math.sqrt(val); j++) {
+  //       if (val % j === 0) {
+  //         setCheckPrime(false);
+  //         console.log("first");
+  //         break;
+  //       } else {
+  //         setCheckPrime(true);
+  //         // console.log("first");
+  //       }
+  //     }
+  //     return checkPrime;
+  //     // console.log(checkPrime)
+  //   }
 
   return (
-    <div className="w-full h-full xxl:min-h-[1555px] pb-10 sm:pb-14 md:pb-20 xxl:pb-[169px]">
+    <div className="font-KohSantepheap w-full h-full xxl:min-h-[1555px] pb-10 sm:pb-14 md:pb-20 xxl:pb-[169px]">
       <div className="w-full h-full md:max-w-[700px] lg:max-w-[800px] xl:max-w-[980px] xxl:max-w-[1535px] mx-auto p-4">
         <img
           src={logo}
@@ -35,7 +36,44 @@ export default function TaskOne() {
           className="mt-5 md:mt-0 mb-5 md:mb-0 md:max-w-[500px] xxl:mt-20 xxl:mb-[70px] xxl:max-w-[833px] xxl:max-h-[240px] mx-auto"
         />
         <div className="">
-          <p className="xxl:text-2xl leading-6 font-bold mb-5 xxl:mb-14">
+            <Link to={"/"} className="flex mb-14 h-full items-center">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-full"
+              >
+                <g clip-path="url(#clip0_640_6378)">
+                  <path
+                    d="M3.33331 8H12.6666"
+                    stroke="#2C3E50"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M3.33331 8L5.99998 10.6667"
+                    stroke="#2C3E50"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M3.33331 8.00004L5.99998 5.33337"
+                    stroke="#2C3E50"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_640_6378">
+                    <rect width="16" height="16" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <p className="ml-2">Go back</p>
+            </Link>
+          <p className="xxl:text-2xl leading-6 font-bold mb-5 xxl:mb-6">
             Task: Num detector via color in grid
           </p>
           <p className="mb-3">Enter number</p>
@@ -167,9 +205,17 @@ export default function TaskOne() {
                     key={idx * 1000 * Math.random()}
                     className={`flex items-center justify-center min-w-[50px] min-h-[50px] xs320:w-[70px] xs320:h-[70px] xs375:w-[89px] xs375:h-[87px] xs425:w-[75px] xs425:h-[75px] sm:w-[125px] sm:h-[125px] md:w-[145px] md:h-[150px] lg:w-[171px] lg:h-[150px] xxl:w-[212px] xxl:h-[150px] text-white text-lg xxl:text-[32px] leading-8 text-center rounded-2xl 
                                         ${
-                                          ((item > 2) && (item % 2 !== 0) && (item % 3 !== 0) && (item % 5 !== 0) && (item % 7 !== 0) && 'bg-yellow-500') ||
-                                          ((item === 2 || item === 3 || item === 5) && "bg-yellow-500") ||
-                                        //   (checkIfPrime(item) && "bg-yellow-500") ||
+                                          (item > 2 &&
+                                            item % 2 !== 0 &&
+                                            item % 3 !== 0 &&
+                                            item % 5 !== 0 &&
+                                            item % 7 !== 0 &&
+                                            "bg-yellow-500") ||
+                                          ((item === 2 ||
+                                            item === 3 ||
+                                            item === 5) &&
+                                            "bg-yellow-500") ||
+                                          //   (checkIfPrime(item) && "bg-yellow-500") ||
                                           (item % 2 === 0 && "bg-green-500") ||
                                           "bg-blue-500"
                                         }`}

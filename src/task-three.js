@@ -84,7 +84,7 @@ export default function TaskThree() {
   }
 
   return (
-    <div className="w-full h-full xxl:min-h-[1555px] pb-10 sm:pb-14 md:pb-20 xxl:pb-[169px]">
+    <div className="font-KohSantepheap w-full h-full xxl:min-h-[1555px] pb-10 sm:pb-14 md:pb-20 xxl:pb-[169px]">
       <div className="w-full h-full md:max-w-[700px] lg:max-w-[800px] xl:max-w-[980px] xxl:max-w-[1535px] mx-auto p-4">
         <img
           src={logo}
@@ -205,7 +205,7 @@ export default function TaskThree() {
           {/* Number classification labels */}
           <div className="mb-6">
             <ul className="flex flex-row whitespace-nowrap p-0 gap-4 xs320:gap-3 border-b border-gray-200 md:max-w-[410px] overflow-x-scroll md:overflow-hidden">
-              <li>
+              <li className="active active:border active:border-red-600 visited:border visited:border-red-600">
                 <button
                   onClick={() => {
                     setGridArr(defaultArr);
