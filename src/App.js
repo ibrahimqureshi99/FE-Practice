@@ -1,11 +1,24 @@
-import './App.css';
-import Task from './task';
+import "./App.css";
+import Main from "./main";
+import TaskOne from "./task-one";
+import TaskTwo from "./task-two";
+import TaskThree from "./task-three";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className='font-KohSantepheap'>
-      <Task />
-    </div>
+    <Router>
+      <div className="font-KohSantepheap">
+        <Routes>
+          <Route>
+            <Route path="/" element={<Main />} />
+            <Route path="/task1" element={<TaskOne />} />
+            <Route path="/task2" element={<TaskTwo />} />
+            <Route path="/task3" element={<TaskThree />} />
+          </Route>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
