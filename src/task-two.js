@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import logo from "./images/AP-logo.png";
 
 export default function TaskTwo() {
@@ -6,12 +7,12 @@ export default function TaskTwo() {
   let gridValues = [];
   // let xPos = 0
   // let yPos = 0
-  let xPosClient = 0
-  let yPosClient = 0
-  let xPosScreen = 0
-  let yPosScreen = 0
-  let xPosPage = 0
-  let yPosPage = 0
+  let xPosClient = 0;
+  let yPosClient = 0;
+  let xPosScreen = 0;
+  let yPosScreen = 0;
+  let xPosPage = 0;
+  let yPosPage = 0;
   // let xPosOffset = 0
   // let yPosOffset = 0
 
@@ -96,6 +97,43 @@ export default function TaskTwo() {
           className="mt-5 md:mt-0 mb-5 md:mb-0 md:max-w-[500px] xxl:mt-20 xxl:mb-[70px] xxl:max-w-[833px] xxl:max-h-[240px] mx-auto"
         />
         <div className="">
+          <Link to={"/"} className="flex mb-4 sm:mb-14 h-full items-center">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-full"
+            >
+              <g clip-path="url(#clip0_640_6378)">
+                <path
+                  d="M3.33331 8H12.6666"
+                  stroke="#2C3E50"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M3.33331 8L5.99998 10.6667"
+                  stroke="#2C3E50"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M3.33331 8.00004L5.99998 5.33337"
+                  stroke="#2C3E50"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_640_6378">
+                  <rect width="16" height="16" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+            <p className="ml-2">Go back</p>
+          </Link>
           <p className="xxl:text-2xl leading-6 font-bold mb-5 xxl:mb-14">
             Task: Num detector via color in grid
           </p>
@@ -248,9 +286,9 @@ export default function TaskTwo() {
                       // dragStart(e, idx);
                       // console.log(e.touches[0].clientX, e.touches[0].clientY)
                       // xPos = e.touches[0].pageX + 100
-                      xPosClient = e.touches[0].clientX
-                      xPosScreen = e.touches[0].screenX
-                      xPosPage = e.touches[0].pageX
+                      xPosClient = e.touches[0].clientX;
+                      xPosScreen = e.touches[0].screenX;
+                      xPosPage = e.touches[0].pageX;
                       // xPosOffset = e.touches[0].offsetX
                       // e.target.current = idx
                       // console.log("first", e.target.current)
@@ -261,24 +299,27 @@ export default function TaskTwo() {
                       // let test = e.target.innerHTML
                       // console.log("third ", e.changedTouches[0].pageX);
                       // yPos = e.changedTouches[0].pageX + 100
-                      yPosClient = e.touches[0].clientY
-                      yPosScreen = e.touches[0].screenY
-                      yPosPage = e.touches[0].pageY
+                      yPosClient = e.touches[0].clientY;
+                      yPosScreen = e.touches[0].screenY;
+                      yPosPage = e.touches[0].pageY;
                       // yPosOffset = e.touches[0].offsetY
                       // e.target.current = idx
                       // const test = e.idx.getBoundingClientRect()
                       // console.log("test", test.top)
                       // console.log("second", e.target.current)
-                      console.log("xClient ", xPosClient)
-                      console.log("xScreen ", xPosScreen)
-                      console.log("xPage ", xPosPage)
+                      console.log("xClient ", xPosClient);
+                      console.log("xScreen ", xPosScreen);
+                      console.log("xPage ", xPosPage);
                       // console.log("xOffset ", xPosOffset)
-                      console.log("yClient ", yPosClient)
-                      console.log("yScreen ", yPosScreen)
-                      console.log("yPage ", yPosPage)
+                      console.log("yClient ", yPosClient);
+                      console.log("yScreen ", yPosScreen);
+                      console.log("yPage ", yPosPage);
                       // console.log("yOffset ", yPosOffset)
                       // let doc = document.getElementById('mob-drag')
-                      console.log("element ", document.elementFromPoint(xPosClient, yPosPage))
+                      console.log(
+                        "element ",
+                        document.elementFromPoint(xPosClient, yPosPage)
+                      );
                       // console.log("element ", document.elementFromPoint(xPos, yPos))
                       // console.log("element ", document.elementFromPoint(xPos, yPos))
                       // console.log("element ", document.elementFromPoint(xPos, yPos))

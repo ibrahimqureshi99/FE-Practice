@@ -36,7 +36,7 @@ export default function TaskOne() {
           className="mt-5 md:mt-0 mb-5 md:mb-0 md:max-w-[500px] xxl:mt-20 xxl:mb-[70px] xxl:max-w-[833px] xxl:max-h-[240px] mx-auto"
         />
         <div className="">
-            <Link to={"/"} className="flex mb-14 h-full items-center">
+            <Link to={"/"} className="flex mb-4 sm:mb-14 h-full items-center">
               <svg
                 width="16"
                 height="16"
