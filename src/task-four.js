@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "./images/AP-logo.png";
 
@@ -6,9 +6,6 @@ export default function TaskFour() {
   // Variable declarations
   let gridValues = [];
 
-  //useRefs
-  const dragItem = useRef();
-  const dragOverItem = useRef();
 
   // UseStates
   const [userValue, setUserValue] = useState(""); //for input value
@@ -81,7 +78,7 @@ export default function TaskFour() {
 
           <div className="xs320:flex justify-between">
             {!removeElementInputVisible && (
-              <div className="mb-8 xxl:mb-14 relative w-full sm:w-auto">
+              <div className="mb-8 xxl:mb-14 relative w-full sm:w-auto md:flex">
                 {/* Input field that takes user input */}
                 <input
                   value={userValue}
@@ -93,7 +90,7 @@ export default function TaskFour() {
                     setInputTooltipVisible(false);
                   }}
                   placeholder="Enter number to generate grid"
-                  className="p-3 sm:p-4 border border-gray-200 rounded-[4px] w-full sm:w-[340px] sm:mr-8 mb-4 sm:mb-0"
+                  className="p-3 sm:p-4 border border-gray-200 rounded-[4px] w-full sm:w-[340px] sm:mr-8 mb-4 sm:mb-0 leading-4 max-h-[48px]"
                 />
 
                 {/* Custom Tooltip for creating grid*/}
@@ -131,7 +128,7 @@ export default function TaskFour() {
             )}
 
             {removeElementInputVisible && (
-              <div className="mb-8 xxl:mb-14 relative w-full sm:w-auto">
+              <div className="mb-8 xxl:mb-14 relative w-full sm:w-auto md:flex">
                 {/* Input field that takes index to remove element */}
                 <input
                   type="number"
@@ -142,7 +139,7 @@ export default function TaskFour() {
                     setRemoveTooltipVisible(false);
                   }}
                   placeholder="Enter index to remove the box"
-                  className="p-3 sm:p-4 border border-gray-200 rounded-[4px] w-full sm:w-[340px] sm:mr-8 mb-4 sm:mb-0"
+                  className="p-3 sm:p-4 border border-gray-200 rounded-[4px] w-full sm:w-[340px] sm:mr-8 mb-4 sm:mb-0 leading-4 max-h-[48px]"
                   // disabled={inputFieldDisabled}
                 />
 
@@ -152,9 +149,9 @@ export default function TaskFour() {
                     (removeTooltipVisible && `opacity-100`) || `opacity-0`
                   } transition-opacity duration-300 `}
                 >
-                  {gridArr.length > 0 && <p>{`Please enter an index value up to ${
+                  {(gridArr.length > 0 && <p>{`Please enter an index value up to ${
                     gridArr.length - 1
-                  }`}</p> || <p>There is no element in the array!</p>}
+                  }`}</p>) || (<p>There is no element in the array!</p>)}
                 </div>
 
                 {/* Submit Button to remove item*/}
@@ -206,7 +203,7 @@ export default function TaskFour() {
                     setResetButtonVisible(false);
                     setRemoveElementInputVisible(false);
                   }}
-                  className="hidden sm:block border text-blue-600 border-blue-600 rounded-[4px] px-8 py-4"
+                  className="hidden sm:block border text-blue-600 border-blue-600 rounded-[4px] px-8 py-4 leading-4 max-h-[48px]"
                 >
                   Reset
                 </button>

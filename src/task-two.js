@@ -25,6 +25,7 @@ export default function TaskTwo() {
   const [resetButtonVisible, setResetButtonVisible] = useState(false);
   const [tooltipVisible, setTooltipVisible] = useState(false);
   const [inputFieldDisabled, setInputFieldDisabled] = useState(false);
+  const [dragCursor, setDragCursor] = useState("cursor-grab")
 
   // Get value from input field
   const getInputValue = (event) => {
@@ -60,17 +61,19 @@ export default function TaskTwo() {
     dragOverItem.current = idx;
     console.log("second ", dragOverItem.current);
   };
-
+  
   const drop = (e) => {
     const copyListItems = [...gridArr];
     const dragItemContent = copyListItems[dragItem.current];
-
+    
+    e.preventDefault();
     // Switch elements of selected tiles
     copyListItems.splice(dragItem.current, 1);
     copyListItems.splice(dragOverItem.current, 0, dragItemContent);
     dragItem.current = null;
     dragOverItem.current = null;
     setGridArr(copyListItems);
+    setDragCursor("cursor-grab")
 
     // Comparison with sorted array and reset grid
     let sorted = sortGridArr(gridArr);
@@ -143,7 +146,7 @@ export default function TaskTwo() {
           </p>
           <p className="mb-3">Enter number</p>
           <div className="xs320:flex justify-between">
-            <div className="mb-8 xxl:mb-14 relative w-full sm:w-auto">
+            <div className="mb-8 xxl:mb-14 relative w-full sm:w-auto md:flex">
               {/* Input field that takes user input */}
               <input
                 value={userValue}
@@ -153,7 +156,7 @@ export default function TaskTwo() {
                   setTooltipVisible(false);
                 }}
                 placeholder="Enter a number!"
-                className="p-3 sm:p-4 border border-gray-200 rounded-[4px] w-full sm:w-[340px] sm:mr-8 mb-4 sm:mb-0"
+                className="p-3 sm:p-4 border border-gray-200 rounded-[4px] w-full sm:w-[340px] sm:mr-8 mb-4 sm:mb-0 max-h-[48px]"
                 disabled={inputFieldDisabled}
               />
 
@@ -263,8 +266,7 @@ export default function TaskTwo() {
                 return (
                   <div
                     id="mob-drag"
-                    key={idx * 1000 * Math.random()}
-                    // className={`flex items-center justify-center min-w-[50px] min-h-[50px] xs320:w-[70px] xs320:h-[70px] xs375:w-[89px] xs375:h-[87px] xs425:w-[75px] xs425:h-[75px] sm:w-[125px] sm:h-[125px] md:w-[145px] md:h-[150px] lg:w-[171px] lg:h-[150px] xxl:w-[212px] xxl:h-[150px] text-white text-lg xxl:text-[32px] leading-8 text-center rounded-2xl
+                    key={idx * 1000 * Math.random()}// className={`flex items-center justify-center min-w-[50px] min-h-[50px] xs320:w-[70px] xs320:h-[70px] xs375:w-[89px] xs375:h-[87px] xs425:w-[75px] xs425:h-[75px] sm:w-[125px] sm:h-[125px] md:w-[145px] md:h-[150px] lg:w-[171px] lg:h-[150px] xxl:w-[212px] xxl:h-[150px] text-white text-lg xxl:text-[32px] leading-8 text-center rounded-2xl
                     className={`flex items-center justify-center text-white text-lg xxl:text-[32px] leading-8 text-center rounded-2xl min-h-[50px]  xs320:h-[70px] xs375:h-[87px] xs425:h-[75px] sm:h-[125px] md:h-[150px] lg:h-[150px] xxl:h-[150px]
                                         ${
                                           (item > 2 &&
@@ -279,10 +281,10 @@ export default function TaskTwo() {
                                             "bg-yellow-500") ||
                                           (item % 2 === 0 && "bg-green-500") ||
                                           "bg-blue-500"
-                                        }`}
+                                        } ${dragCursor}`}
                     // Drag functions
-                    onDragStart={(e) => dragStart(e, idx)}
-                    onDragEnter={(e) => dragEnter(e, idx)}
+                    onDragStart={(e) => {dragStart(e, idx); e.dataTransfer.effectAllowed = "copyMove";}}
+                    onDragEnter={(e) => {dragEnter(e, idx); e.dataTransfer.dropEffect = "copy";}}
                     onDragEnd={drop}
                     draggable
                     // Touch functions

@@ -62,7 +62,7 @@ export default function TaskOne() {
           </p>
           <p className="mb-3">Enter number</p>
           <div className="xs320:flex justify-between">
-            <div className="mb-8 xxl:mb-14 relative w-full sm:w-auto">
+            <div className="mb-8 xxl:mb-14 relative w-full sm:w-auto md:flex">
               {/* Input field that takes user input */}
               <input
                 value={userValue}
@@ -76,7 +76,7 @@ export default function TaskOne() {
                   setTooltipVisible(false);
                 }}
                 placeholder="Enter a number!"
-                className="p-3 sm:p-4 border border-gray-200 rounded-[4px] w-full sm:w-[340px] sm:mr-8 mb-4 sm:mb-0"
+                className="p-3 sm:p-4 border border-gray-200 rounded-[4px] w-full sm:w-[340px] sm:mr-8 mb-4 sm:mb-0 max-h-[48px]"
               />
               {/* <p className='text-[10px] mb-3 sm:mb-0 text-zinc-600'><span className='text-red-600'>*</span> Max value can be 30</p> */}
 
@@ -194,7 +194,8 @@ export default function TaskOne() {
                                             "bg-yellow-500") ||
                                           ((item === 2 ||
                                             item === 3 ||
-                                            item === 5) &&
+                                            item === 5 ||
+                                            item === 7) &&
                                             "bg-yellow-500") ||
                                           //   (checkIfPrime(item) && "bg-yellow-500") ||
                                           (item % 2 === 0 && "bg-green-500") ||

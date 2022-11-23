@@ -164,7 +164,7 @@ export default function TaskThree() {
           </p>
           <p className="mb-3">Enter number</p>
           <div className="xs320:flex justify-between">
-            <div className="mb-8 xxl:mb-14 relative w-full sm:w-auto">
+            <div className="mb-8 xxl:mb-14 relative w-full sm:w-auto md:flex">
               {/* Input field that takes user input */}
               <input
                 value={userValue}
@@ -174,7 +174,7 @@ export default function TaskThree() {
                   setTooltipVisible(false);
                 }}
                 placeholder="Enter a number!"
-                className="p-3 sm:p-4 border border-gray-200 rounded-[4px] w-full sm:w-[340px] sm:mr-8 mb-4 sm:mb-0"
+                className="p-3 sm:p-4 border border-gray-200 rounded-[4px] w-full sm:w-[340px] sm:mr-8 mb-4 sm:mb-0 max-h-[48px]"
                 disabled={inputFieldDisabled}
               />
 
@@ -273,7 +273,7 @@ export default function TaskThree() {
           <div className="mb-6">
             <ul className="flex flex-row whitespace-nowrap p-0 gap-4 xs320:gap-3 border-b border-gray-200 md:max-w-[393px] overflow-x-scroll md:overflow-hidden">
               {/* All values tab */}
-              <li className="active active:border active:border-red-600 visited:border visited:border-red-600">
+              <li className="">
                 <button
                   onClick={() => {
                     setGridArr(defaultArr);

@@ -12,34 +12,37 @@ export default function Main() {
       img: taskOneImage,
       title: "Number Detector",
       description:
-        "Upon entering number the grid will sort it self by prime, even and odd numbers.",
+        "Identification by colors of even, odd, and prime numbers in a sorted array.",
       link: "/task1",
     },
     {
       id: 1,
       img: taskTwoImage,
       title: "Puzzle Grid",
-      description: "Upon entering number the grid will sort it self by prime, even and odd numbers.",
+      description:
+        "Grid with draggable tiles, shows alert on sorting grid in correct order.",
       link: "/task2",
     },
     {
       id: 2,
       img: taskThreeImage,
       title: "Number Group",
-      description: "Upon entering number the grid will sort it self by prime, even and odd numbers.",
+      description:
+        "Filter grid to show either all numbers or only even, odd, or prime numbers.",
       link: "/task3",
     },
     {
       id: 4,
       img: taskFourImage,
       title: "Remove element at index",
-      description: "Upon entering number the grid will sort it self by prime, even and odd numbers.",
+      description:
+        "Sorted grid with single color, elements can be removed from specified indices.",
       link: "/task4",
     },
   ];
 
   return (
-    <div className="w-full h-full flex flex-col justify-center max-w-[1920px] mx-auto my-auto pt-10 px-4 sm:p-16 align-middle items-center">
+    <div className="w-full h-full flex flex-col justify-center max-w-[1920px] mx-auto my-auto pt-10 px-4 sm:p-20 align-middle items-center">
       {/* Main Page Title and Description */}
       <h1 className="text-4xl md:text-5xl text-center font-extrabold md:font-bold mb-6 text-gray-800">
         Alphasquad Tasks for Dev’s
@@ -49,13 +52,13 @@ export default function Main() {
         frontend.
       </p>
 
-      <div className="w-full h-full flex flex-col sm:flex-row gap-8 max-w-[1920px] mx-auto my-auto sm:p-10 align-middle items-center justify-center">
+      <div className="w-full h-full flex flex-col sm:flex-row  gap-8 max-w-[1920px] mx-auto my-auto align-middle items-center">
         {/* Project Cards */}
         {tasks?.map((item, idx) => {
           return (
             <div
               key={idx * 1000 * Math.random()}
-              class="max-w-[296px] max-h-[417px] overflow-hidden border border-gray-200 rounded-lg"
+              class="max-w-[296px] min-h-[417px] overflow-hidden border border-gray-200 rounded-lg flex-1"
             >
               <div class="pb-4">
                 {/* Card Image */}
@@ -76,7 +79,7 @@ export default function Main() {
                   {/* Card Button */}
                   <Link
                     to={item.link}
-                    className="w-full block py-[10px] my-[10px] text-center text-sm font-semibold text-blue-600 leading-[21px] border border-blue-600 rounded-[4px] hover:text-white hover:bg-blue-600"
+                    className="flex py-[10px] my-[10px] self-end justify-center text-center text-sm font-semibold text-blue-600 leading-[21px] border border-blue-600 rounded-[4px] hover:text-white hover:bg-blue-600"
                   >
                     View Task
                   </Link>
