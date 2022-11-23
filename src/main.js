@@ -34,7 +34,7 @@ export default function Main() {
     {
       id: 4,
       img: taskFourImage,
-      title: "Remove element at index",
+      title: "Number Remover",
       description:
         "Sorted grid where elements can be removed from specified indices.",
       link: "/task4",
@@ -73,7 +73,7 @@ export default function Main() {
                     {item.title}
                   </h2>
                   {/* Card Description */}
-                  <p className="text-sm font-normal text-gray-600 leading-[21px] mb-4">
+                  <p className="text-sm font-normal text-gray-600 leading-[21px] mb-[26px]">
                     {item.description}
                   </p>
                   {/* Card Button */}

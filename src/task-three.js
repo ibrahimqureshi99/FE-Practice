@@ -155,7 +155,7 @@ export default function TaskThree() {
                 </clipPath>
               </defs>
             </svg>
-            <p className="ml-2">Go back</p>
+            <p className="ml-2 underline">Go back</p>
           </Link>
 
           {/* Task Title */}

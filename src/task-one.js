@@ -55,7 +55,7 @@ export default function TaskOne() {
                   </clipPath>
                 </defs>
               </svg>
-              <p className="ml-2">Go back</p>
+              <p className="ml-2 underline">Go back</p>
             </Link>
           <p className="xxl:text-2xl leading-6 font-bold mb-5 xxl:mb-6">
             Task: Num detector via color in grid
