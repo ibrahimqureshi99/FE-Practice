@@ -36,7 +36,7 @@ export default function Main() {
       img: taskFourImage,
       title: "Remove element at index",
       description:
-        "Sorted grid with single color, elements can be removed from specified indices.",
+        "Sorted grid where elements can be removed from specified indices.",
       link: "/task4",
     },
   ];
