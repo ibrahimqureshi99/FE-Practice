@@ -2,6 +2,7 @@ import React from "react";
 import taskOneImage from "./images/task-1.png";
 import taskTwoImage from "./images/task-2.png";
 import taskThreeImage from "./images/task-3.png";
+import taskFourImage from "./images/task-4.png";
 import { Link } from "react-router-dom";
 
 export default function Main() {
@@ -27,6 +28,13 @@ export default function Main() {
       title: "Number Group",
       description: "Upon entering number the grid will sort it self by prime, even and odd numbers.",
       link: "/task3",
+    },
+    {
+      id: 4,
+      img: taskFourImage,
+      title: "Remove element at index",
+      description: "Upon entering number the grid will sort it self by prime, even and odd numbers.",
+      link: "/task4",
     },
   ];
 
