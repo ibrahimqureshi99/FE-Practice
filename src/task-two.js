@@ -5,8 +5,6 @@ import logo from "./images/AP-logo.png";
 export default function TaskTwo() {
   // Variable declarations
   let gridValues = [];
-  // let xPos = 0
-  // let yPos = 0
   let xPosClient = 0;
   let yPosClient = 0;
   let xPosScreen = 0;
@@ -74,10 +72,16 @@ export default function TaskTwo() {
     dragOverItem.current = null;
     setGridArr(copyListItems);
 
-    // Comparison with sorted array
+    // Comparison with sorted array and reset grid
     let sorted = sortGridArr(gridArr);
     if (JSON.stringify(copyListItems) === JSON.stringify(sorted)) {
-      setTimeout(alert("Task completed successfully!"), 20000);
+      setTimeout(
+        alert("Task completed successfully!")
+      , 2000);
+      setGridArr();
+      setUserValue("");
+      setResetButtonVisible(false);
+      setInputFieldDisabled(false);
     }
   };
 
@@ -135,7 +139,7 @@ export default function TaskTwo() {
             <p className="ml-2">Go back</p>
           </Link>
           <p className="xxl:text-2xl leading-6 font-bold mb-5 xxl:mb-14">
-            Task: Num detector via color in grid
+            Task: Puzzle Grid
           </p>
           <p className="mb-3">Enter number</p>
           <div className="xs320:flex justify-between">
@@ -159,14 +163,14 @@ export default function TaskTwo() {
                   (tooltipVisible && `opacity-100`) || `opacity-0`
                 } transition-opacity duration-300 `}
               >
-                <p>Please enter a value from 1 to 6!</p>
+                <p>Please enter a value from 2 to 6!</p>
               </div>
 
               {/* Submit Button*/}
               <button
                 type="submit"
                 onClick={() => {
-                  if (userValue > 6) {
+                  if (userValue < 2 || userValue > 6) {
                     setTooltipVisible(true);
                   } else if (userValue > 0) {
                     setTooltipVisible(true);

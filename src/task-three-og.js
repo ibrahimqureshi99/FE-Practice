@@ -1,8 +1,7 @@
 import React, { useState, useRef } from "react";
-import { Link } from "react-router-dom";
 import logo from "./images/AP-logo.png";
 
-export default function TaskThree() {
+export default function TaskThreeOG() {
   // Variable declarations
   let gridValues = [];
 
@@ -83,31 +82,7 @@ export default function TaskThree() {
     });
     return arr;
   }
-
-  function test(numType) {
-    const copyArr = [...defaultArr];
-    // let test = []
-    if (numType === "prime") {
-      const primeArr = copyArr.filter((val) => {
-        if (val === 2) {
-          return 2;
-        } else if (val > 1) {
-          for (let j = 2; j < val; j++) {
-            const test = val % j !== 0;
-            return test;
-          }
-        }
-      });
-      console.log("first", primeArr);
-      return primeArr;
-    } else if (numType === "even") {
-      const evenArr = copyArr.filter((val) => val % 2 === 0);
-      return evenArr;
-    } else if (numType === "odd") {
-      const oddArr = copyArr.filter((val) => val % 2 !== 0);
-      return oddArr;
-    }
-  }
+  
 
   return (
     <div className="font-KohSantepheap w-full h-full xxl:min-h-[1555px] pb-10 sm:pb-14 md:pb-20 xxl:pb-[169px]">
@@ -118,47 +93,6 @@ export default function TaskThree() {
           className="mt-5 md:mt-0 mb-5 md:mb-0 md:max-w-[500px] xxl:mt-20 xxl:mb-[70px] xxl:max-w-[833px] xxl:max-h-[240px] mx-auto"
         />
         <div className="">
-
-          {/* Go back link */}
-          <Link to={"/"} className="flex mb-4 sm:mb-14 h-full items-center">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-full"
-            >
-              <g clip-path="url(#clip0_640_6378)">
-                <path
-                  d="M3.33331 8H12.6666"
-                  stroke="#2C3E50"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M3.33331 8L5.99998 10.6667"
-                  stroke="#2C3E50"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M3.33331 8.00004L5.99998 5.33337"
-                  stroke="#2C3E50"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_640_6378">
-                  <rect width="16" height="16" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
-            <p className="ml-2">Go back</p>
-          </Link>
-
-          {/* Task Title */}
           <p className="xxl:text-2xl leading-6 font-bold mb-5 xxl:mb-14">
             Task: Num detector via color in grid
           </p>
@@ -184,14 +118,14 @@ export default function TaskThree() {
                   (tooltipVisible && `opacity-100`) || `opacity-0`
                 } transition-opacity duration-300 `}
               >
-                <p>Please enter a value from 2 to 6!</p>
+                <p>Please enter a value from 1 to 6!</p>
               </div>
 
               {/* Submit Button*/}
               <button
                 type="submit"
                 onClick={() => {
-                  if (userValue < 2 || userValue > 6) {
+                  if (userValue > 6) {
                     setTooltipVisible(true);
                   } else if (userValue > 0) {
                     setTooltipVisible(true);
@@ -271,8 +205,7 @@ export default function TaskThree() {
 
           {/* Number classification labels */}
           <div className="mb-6">
-            <ul className="flex flex-row whitespace-nowrap p-0 gap-4 xs320:gap-3 border-b border-gray-200 md:max-w-[393px] overflow-x-scroll md:overflow-hidden">
-              {/* All values tab */}
+            <ul className="flex flex-row whitespace-nowrap p-0 gap-4 xs320:gap-3 border-b border-gray-200 md:max-w-[410px] overflow-x-scroll md:overflow-hidden">
               <li className="active active:border active:border-red-600 visited:border visited:border-red-600">
                 <button
                   onClick={() => {
@@ -290,17 +223,25 @@ export default function TaskThree() {
                   All
                 </button>
               </li>
-
-              {/* Prime values tab */}
               <li>
                 <button
                   onClick={() => {
                     // setGridArr(defaultArr);
+                    const copyArr = [...defaultArr];
+                    const primeArr = copyArr.filter(
+                      (val) =>
+                        val === 2 ||
+                        val === 3 ||
+                        val === 5 ||
+                        (val % 2 !== 0 &&
+                          val % 3 !== 0 &&
+                          val % 5 !== 0 &&
+                          val % 7 !== 0)
+                    );
+                    setGridArr(primeArr);
                     setValueType("prime");
-                    setGridArr(test("prime"));
                     setIsDraggable(false);
                     setActiveTab(false);
-
                     // console.log(primeArr);
                   }}
                   className="pb-3 text-neutral-600 text-[10px] xs375:text-[12px] xs425:text-[14px] sm:text-xs leading-3 focus:font-bold focus:border-b-[3px] focus:border-violet-500"
@@ -312,14 +253,14 @@ export default function TaskThree() {
                   Prime Number
                 </button>
               </li>
-
-              {/* Even values tab */}
               <li>
                 <button
                   onClick={() => {
                     // setGridArr(defaultArr);
+                    const copyArr = [...defaultArr];
+                    const evenArr = copyArr.filter((val) => val % 2 === 0);
+                    setGridArr(evenArr);
                     setValueType("even");
-                    setGridArr(test("even"));
                     setIsDraggable(false);
                     setActiveTab(false);
                   }}
@@ -332,18 +273,18 @@ export default function TaskThree() {
                   Even Number
                 </button>
               </li>
-
-              {/* Odd values tab */}
               <li>
                 <button
                   onClick={() => {
                     // setDefaultArr(gridArr)
+                    const copyArr = [...defaultArr];
+                    const oddArr = copyArr.filter((val) => val % 2 !== 0);
+                    setGridArr(oddArr);
                     setValueType("odd");
-                    setGridArr(test("odd"));
                     setIsDraggable(false);
                     setActiveTab(false);
                   }}
-                  className="pb-3 text-neutral-600 text-[10px] xs375:text-[12px] xs425:text-[14px] sm:text-xs leading-3 focus:font-bold focus:border-b-[3px] focus:border-red-500"
+                  className="pb-3 text-neutral-600 text-[10px] xs375:text-[12px] xs425:text-[14px] sm:text-xs leading-3 focus:font-bold focus:border-b-[3px] focus:border-red-800"
                   disabled={!clickable}
                 >
                   {/* Label icon */}
@@ -356,19 +297,17 @@ export default function TaskThree() {
           </div>
 
           {/* Grid container with fixed width and adjustable height */}
-          <div
-            className={` border ${
-              valueType === "all"
-                ? "bg-orange-100 border-orange-600"
-                : valueType === "prime"
-                ? "bg-violet-50 border-violet-500"
-                : valueType === "even"
-                ? "bg-green-50 border-green-500"
-                : valueType === "odd"
-                ? "bg-red-50 border-red-500"
-                : ""
-            } min-h-[250px] md:min-h-[350px] xxl:min-h-[744px] xl:w-[1080] xxl:max-w-[1535px] rounded-3xl p-6 xxl:p-12 mx-auto`}
-          >
+          <div className={` ${
+                    valueType === "all"
+                      ? "bg-orange-100 border-orange-600"
+                      : valueType === "prime"
+                      ? "bg--violet-500 border-violet-500"
+                      : valueType === "even"
+                      ? "bg--green-500 border-green-500"
+                      : valueType === "odd"
+                      ? "bg-red-500 border-red-500"
+                      : ""
+                  } border  min-h-[250px] md:min-h-[350px] xxl:min-h-[744px] xl:w-[1080] xxl:max-w-[1535px] rounded-3xl p-6 xxl:p-12 mx-auto`}>
             <div
               style={{ gridTemplateColumns: `repeat(${userValue}, 1fr` }}
               className={`grid grid-cols-${userValue} gap-x-2 xxl:gap-x-8 gap-y-2 xxl:gap-y-4 mx-auto w-full`}

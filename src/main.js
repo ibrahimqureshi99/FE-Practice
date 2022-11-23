@@ -9,7 +9,7 @@ export default function Main() {
     {
       id: 0,
       img: taskOneImage,
-      title: "Num detector via color in grid",
+      title: "Number Detector",
       description:
         "Upon entering number the grid will sort it self by prime, even and odd numbers.",
       link: "/task1",

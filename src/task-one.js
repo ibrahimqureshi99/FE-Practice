@@ -10,22 +10,6 @@ export default function TaskOne() {
   const [gridArr, setGridArr] = useState();
   const [resetButtonVisible, setResetButtonVisible] = useState(false);
   const [tooltipVisible, setTooltipVisible] = useState(false);
-  //   const [checkPrime, setCheckPrime] = useState(false);
-
-  //   function checkIfPrime(val) {
-  //     for (let j = 2; j <= Math.sqrt(val); j++) {
-  //       if (val % j === 0) {
-  //         setCheckPrime(false);
-  //         console.log("first");
-  //         break;
-  //       } else {
-  //         setCheckPrime(true);
-  //         // console.log("first");
-  //       }
-  //     }
-  //     return checkPrime;
-  //     // console.log(checkPrime)
-  //   }
 
   return (
     <div className="font-KohSantepheap w-full h-full xxl:min-h-[1555px] pb-10 sm:pb-14 md:pb-20 xxl:pb-[169px]">
@@ -83,7 +67,7 @@ export default function TaskOne() {
               <input
                 value={userValue}
                 type="number"
-                min="10"
+                min="1"
                 max="30"
                 onChange={(e) => {
                   setUserValue(e.target.value);
@@ -109,7 +93,7 @@ export default function TaskOne() {
               <button
                 type="submit"
                 onClick={() => {
-                  if (userValue > 3000) {
+                  if (userValue > 30) {
                     setTooltipVisible(true);
                   } else if (userValue > 0) {
                     setTooltipVisible(true);
@@ -126,9 +110,6 @@ export default function TaskOne() {
                                 py-[14px] px-8 text-sm leading-[14px] 
                                 sm:px-8 sm:py-4 sm:w-auto sm:rounded-[4px]
                                 "
-                // py-1 rounded-2xl ml-2 max-w-[130px]
-                // xs375:max-w-[150px] xs375:py-1.5
-                // xs425:max-w-[180px] xs425:py-2
               >
                 Submit
               </button>
@@ -197,7 +178,7 @@ export default function TaskOne() {
           </div>
 
           {/* Grid container with fixed width and adjustable height */}
-          <div className="bg-orange-100 border border-orange-600 min-h-[250px] md:min-h-[350px] xxl:h-[744px] xl:w-[1080] xxl:max-w-[1535px] rounded-3xl p-6 xxl:p-12 mx-auto">
+          <div className="bg-orange-100 border border-orange-600 min-h-[250px] md:min-h-[350px] xxl:min-h-[744px] xl:w-[1080] xxl:max-w-[1535px] rounded-3xl p-6 xxl:p-12 mx-auto">
             <div className="flex flex-wrap gap-x-2 xxl:gap-x-8 gap-y-2 xxl:gap-y-4 mx-auto w-full">
               {gridArr?.map((item, idx) => {
                 return (
