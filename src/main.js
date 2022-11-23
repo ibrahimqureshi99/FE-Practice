@@ -52,7 +52,7 @@ export default function Main() {
         frontend.
       </p>
 
-      <div className="w-full h-full flex flex-col sm:flex-row  gap-8 max-w-[1920px] mx-auto my-auto align-middle items-center">
+      <div className="w-full h-full flex flex-col lg:flex-row gap-8 max-w-[1920px] mx-auto my-auto align-middle items-center">
         {/* Project Cards */}
         {tasks?.map((item, idx) => {
           return (
